@@ -2,11 +2,12 @@
     Prism.languages.mikrotik = {
         'comment': /#.*/,
         'value': {
-            pattern: /([a-z]+=)([-0-9a-zA-Z,_\/\.]+)/,
-            lookbehind: true
+            pattern: /([-a-z]+=)([-0-9a-zA-Z,_\/\.]+)/,
+            lookbehind: true,
+            greedy: true
         },
         'parameter': {
-            pattern: /\b([-a-z]+=)/,
+            pattern: /\b([a-z-]+)(=)/,
             lookbehind: false 
         },
         'function': {
